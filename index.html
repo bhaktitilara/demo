@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script  src="js/halapi.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+
+<div class="sidenav">  
+  <button class="dropdown-btn">Publications  
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#Journalarticles"  onclick="getval('Journalarticles');">Journal articles</a>   
+    <a href="#Conferencepapers" onclick="getDocuments();getval('Conference papers')">Conference papers</a>
+    <a href="publication.html">Book sections</a>
+  </div>
+  <a href="#Projects" onclick="getval('Projects')">Projects</a>
+  <a href="#Articles-Details" onclick="getval('Articles Details')">Articles Details</a>
+  <a href="#Authors" onclick="getval('Authors')">Authors</a>
+  <a href="#Search" onclick="getval('Search')">Search</a>
+</div>
+ 
+<h2 id="tagName"  style="margin-left: 230px;"> </h2>
+ 
+<div id= "Search" class="sb-example-1 ">
+    <div class="search">
+       <input id="searchval" type="text" class="searchTerm" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton" id="send">
+         <i class="fa fa-search" onclick="serchContent()" ></i>
+      </button>
+    </div>
+ 
+ </div> 
+ 
+</br>
+
+<div id="data" class="main">
+    
+</div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
+
