@@ -95,6 +95,7 @@ function getDocuments() {
 
 }
 
+
 function serchContent_new() {
     var searchval = document.getElementById("searchval").value;
     console.log(searchval);
@@ -159,17 +160,17 @@ function serchContent()
         if(tagname=='Journalarticles')
         {          
                
-            url_address= 'http://api.archives-ouvertes.fr/ref/journal/?q=' + searchval +'&wt=json&indent=true';    
+            url_address= 'http://api.archives-ouvertes.fr/ref/journal/?q=*' + searchval +'*&wt=json&indent=true';    
             console.log(url_address);  
         }
         else if(tagname=='Search')
         {    document.getElementById("tagName").value = tagname;
-            url_address='https://api.archives-ouvertes.fr/search/?q=' + searchval +'&wt=json';
+            url_address='https://api.archives-ouvertes.fr/search/?q=*' + searchval +'*&wt=json';
         } 
         else if(tagname=='Authors')
         {   
             // getAuthors();
-            url_address='https://api.archives-ouvertes.fr/ref/author/?q=' + searchval +'&wt=json'; 
+            url_address='https://api.archives-ouvertes.fr/ref/author/?q=*' + searchval +'*&wt=json'; 
             
         }
         var xhr = new XMLHttpRequest(), 
