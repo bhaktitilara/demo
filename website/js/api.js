@@ -1,6 +1,7 @@
 function serch_author() {
     var searchval = document.getElementById("search-term").value;
-
+    $('#authorname').text(searchval);
+    $('#lblTitle').text('Publication');
     var xhr = new XMLHttpRequest(),
         method = 'GET',
         overrideMimeType = 'application/json',
@@ -39,9 +40,10 @@ function serch_author() {
 
 function search_project() {
     var searchval = document.getElementById("search-term").value;
-    $('#data').empty();
-    //  $('#lblTitle').text('Project');
-    document.getElementById('<%= lblTitle.ClientID %>').innerHTML = 'Project';
+    $('#divProjects').empty();
+     
+     $('#lblTitle').text('Project');
+     $('#authorname').text(searchval);
     var xhr = new XMLHttpRequest(),
         method = 'GET',
         overrideMimeType = 'application/json',
@@ -52,9 +54,10 @@ function search_project() {
             var details = JSON.parse(xhr.responseText);
            
             // var node, childNodes = xmlDoc.documentElement.childNodes;
-            var ele = document.getElementById('data');
+            var ele = document.getElementById('divProjects');
             var new_div;
-            $('#data').empty();
+            $('#divProjects').empty();
+          
           
                 for (var i = 0; i < details.response.docs.length; i++) {
                     console.log(details.response.docs[i].label_s);
